@@ -1,0 +1,132 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8fafc;
+}
+
+.app.dark {
+  background-color: #1e293b;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 30px;
+}
+
+.top-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+input {
+  width: 180px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+
+button:hover { background-color: #2563eb; }
+.delete-btn { background-color: #ef4444; }
+.delete-btn:hover { background-color: #e72727; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+th { background-color: #f3f4f6; }
+tr:nth-child(even) { background-color: #f9fafb; }
+tbody tr:hover { background-color: #e2e8f0; }
+
+.dark table { color: white; }
+.dark th { background-color: #334155; }
+.dark td { background-color: #1e293b; }
+.dark tr:hover { background-color: #475569; }
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dark .modal-content {
+  background-color: #334155;
+  color: white;
+  border: 1px solid #475569;
+}
+
+/* Responsive table on mobile */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead { display: none; }
+  td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    border: none;
+  }
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    font-weight: bold;
+    text-align: left;
+  }
+}
